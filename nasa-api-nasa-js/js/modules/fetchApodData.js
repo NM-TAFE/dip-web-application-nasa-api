@@ -1,4 +1,5 @@
 export function fetchApodData(params) {
+  // data
   const apiKey = "GurS0wJyr12na3jhvOraArdY3bGr64N2ovBUUTh5";
   let apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
 

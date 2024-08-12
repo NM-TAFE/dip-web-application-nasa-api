@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     fetchApodData(params)
       .then((data) => {
+        // render
         apodContent.innerHTML = "";
         if (Array.isArray(data)) {
           data.forEach((item) => displayApod(item, apodContent));

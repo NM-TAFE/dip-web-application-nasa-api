@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const fetchApodButton = document.getElementById("fetch-apod");
   const apodContent = document.getElementById("apod-content");
+  const apiKey = "GurS0wJyr12na3jhvOraArdY3bGr64N2ovBUUTh5";
 
   fetchApodButton.addEventListener("click", () => {
     const date = document.getElementById("date").value;
@@ -9,8 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const count = document.getElementById("count").value;
     const thumbs = document.getElementById("thumbs").checked;
 
-    let apiUrl =
-      "https://api.nasa.gov/planetary/apod?api_key=GurS0wJyr12na3jhvOraArdY3bGr64N2ovBUUTh5";
+    // data
+    let apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
 
     if (date) {
       apiUrl += `&date=${date}`;
@@ -31,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => {
+        // render
         if (Array.isArray(data)) {
           apodContent.innerHTML = "";
           data.forEach((item) => displayApod(item, apodContent));
@@ -44,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 
+  // template
   function displayApod(data, container) {
     if (data.media_type === "image") {
       container.innerHTML += `

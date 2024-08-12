@@ -1,4 +1,5 @@
 export function displayApod(data, container) {
+  // template
   if (data.media_type === "image") {
     container.innerHTML += `
             <figure class="image is-4by3">
