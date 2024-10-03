@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NASA APOD</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
-    />
-  </head>
-  <body>
-    <section class="section">
+import React from "react";
+
+// Step 4 bring across our HTML for the form
+const ApodForm = () => {
+  return (
+    <form class="section">
       <div class="container">
         <h1 class="title">NASA Astronomy Picture of the Day</h1>
 
@@ -51,7 +44,9 @@
 
         <div class="field">
           <div class="control">
-            <button id="fetch-apod" class="button is-link">Fetch APOD</button>
+            <button id="fetch-apod" class="button is-link">
+              Fetch APOD
+            </button>
           </div>
         </div>
 
@@ -61,8 +56,8 @@
           </p>
         </div>
       </div>
-    </section>
-    <!-- <script src="js/app.js"></script> -->
-    <script type="module" src="js/main.js"></script>
-  </body>
-</html>
+    </form>
+  );
+};
+
+export default ApodForm;
