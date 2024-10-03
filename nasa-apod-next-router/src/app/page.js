@@ -11,7 +11,7 @@ const Home = () => {
   const [error, setError] = useState("");
 
   const fetchApodData = async (params) => {
-    const apiKey = "GurS0wJyr12na3jhvOraArdY3bGr64N2ovBUUTh5";
+    const apiKey = "{your_api_key}";
     let apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
 
     for (const key in params) {
