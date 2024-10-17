@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const ApodContent = ({ apodData }) => {
   if (!apodData) {
     return (
@@ -17,11 +19,17 @@ const ApodContent = ({ apodData }) => {
             </figure>
           ) : (
             <div className="video-container">
-              <iframe src={data.url} frameBorder="0" allowFullScreen></iframe>
+              <iframe src={data.url} allowFullScreen></iframe>
             </div>
           )}
           <h2 className="title is-4">{data.title}</h2>
           <p>{data.explanation}</p>
+          <Link
+            href={`/nasa-api/${data.date}`}
+            className="button is-link is-inverted is-medium m-1"
+          >
+            View
+          </Link>
         </div>
       ))}
     </div>

@@ -1,3 +1,4 @@
+import "bulma/css/bulma.min.css"; // Import Bulma CSS
 export default function Default() {
   return (
     <section className="section">

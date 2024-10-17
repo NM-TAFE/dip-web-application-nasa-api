@@ -84,3 +84,8 @@ To ensure that all the files you've created are functioning correctly in your Ne
 - **Error Overlay**: When in development mode, Next.js will automatically show an error overlay in the browser if anything goes wrong, which helps in debugging errors directly.
 
 By testing your application with these steps, you will be able to ensure that each component, layout, error boundary, and API route is working as expected. Let me know if you need further guidance or encounter any issues!
+
+```
+rm -rf .next
+npm run dev
+```
