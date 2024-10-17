@@ -19,32 +19,16 @@ const NasaApi = () => {
     }
 
     try {
-      const response = await fetch(apiUrl);
-      const data = await response.json();
-      setApodData(Array.isArray(data) ? data : [data]);
+      setTimeout(async () => {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        setApodData(Array.isArray(data) ? data : [data]);
+      }, 2000);
       setError("");
     } catch (err) {
       setError(`Error fetching data: ${err.message}`);
     }
   };
-
-  // ----- Cloud flare object service worker -----
-  // const fetchApodData = async (params) => {
-  //   let apiUrl = new URL(`https://dawn-fog-fdf7.robbozinoz.workers.dev/`);
-
-  //   for (const key in params) {
-  //     apiUrl.searchParams.append(key, params[key]);
-  //   }
-
-  //   try {
-  //     const response = await fetch(apiUrl.toString());
-  //     const data = await response.json();
-  //     setApodData(Array.isArray(data) ? data : [data]);
-  //     setError("");
-  //   } catch (err) {
-  //     setError(`Error fetching data: ${err.message}`);
-  //   }
-  // };
 
   return (
     <div className="App">
