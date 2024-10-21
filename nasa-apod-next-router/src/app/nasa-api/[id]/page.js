@@ -22,7 +22,7 @@ export default async function ApodDetail({ params }) {
         </figure>
       ) : (
         <div className="video-container">
-          <iframe src={apodData.url} frameBorder="0" allowFullScreen></iframe>
+          <iframe src={apodData.url} allowFullScreen></iframe>
         </div>
       )}
       <h2 className="title is-4">{apodData.title}</h2>

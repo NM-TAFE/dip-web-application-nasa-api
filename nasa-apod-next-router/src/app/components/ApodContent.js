@@ -26,7 +26,7 @@ const ApodContent = ({ apodData }) => {
           <p>{data.explanation}</p>
           <Link
             href={`/nasa-api/${data.date}`}
-            className="button is-link is-inverted is-medium m-1"
+            className="button is-link is-outlined m-1"
           >
             View
           </Link>
