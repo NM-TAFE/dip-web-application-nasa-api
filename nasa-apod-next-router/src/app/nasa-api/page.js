@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import ApodForm from "../components/ApodForm";
 import ApodContent from "../components/ApodContent";
+import { buildApiUrl } from "../utilities/apiUrl";
 import "bulma/css/bulma.min.css";
 import "../globals.css";
 
@@ -12,19 +13,13 @@ const NasaApi = () => {
   const [error, setError] = useState("");
 
   const fetchApodData = async (params) => {
-    const apiKey = "GurS0wJyr12na3jhvOraArdY3bGr64N2ovBUUTh5";
-    let apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}`;
-
-    for (const key in params) {
-      apiUrl += `&${key}=${params[key]}`;
-    }
+    const apiUrl = buildApiUrl(params);
 
     try {
-      setTimeout(async () => {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
-        setApodData(Array.isArray(data) ? data : [data]);
-      }, 2000);
+      const response = await fetch(apiUrl);
+      const data = await response.json();
+      setApodData(Array.isArray(data) ? data : [data]);
+
       setError("");
     } catch (err) {
       setError(`Error fetching data: ${err.message}`);

@@ -1,10 +1,11 @@
 import { notFound } from "next/navigation";
 
 export default async function ApodDetail({ params }) {
-  const apiKey = "GurS0wJyr12na3jhvOraArdY3bGr64N2ovBUUTh5";
   const { id } = params;
 
+  const apiKey = "GurS0wJyr12na3jhvOraArdY3bGr64N2ovBUUTh5";
   const apiUrl = `https://api.nasa.gov/planetary/apod?api_key=${apiKey}&date=${id}`;
+
   const res = await fetch(apiUrl);
 
   if (!res.ok) {
